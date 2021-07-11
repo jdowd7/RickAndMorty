@@ -25,8 +25,8 @@ enum Species: String, Codable {
     case human = "Human"
 }
 
-struct Character : Codable, Identifiable {
-    let id : Int?
+struct Character : Codable, Identifiable, Hashable {
+    let id = UUID()
     let name : String?
     let status : String?
     let species : String?
@@ -57,7 +57,7 @@ struct Character : Codable, Identifiable {
 
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decodeIfPresent(Int.self, forKey: .id)
+        //id = try values.decodeIfPresent(Int.self, forKey: .id)
         name = try values.decodeIfPresent(String.self, forKey: .name)
         status = try values.decodeIfPresent(String.self, forKey: .status)
         species = try values.decodeIfPresent(String.self, forKey: .species)
@@ -69,5 +69,18 @@ struct Character : Codable, Identifiable {
         episode = try values.decodeIfPresent([String].self, forKey: .episode)
         url = try values.decodeIfPresent(String.self, forKey: .url)
         created = try values.decodeIfPresent(String.self, forKey: .created)
+    }
+    
+    static func == (lhs: Character, rhs: Character) -> Bool {
+        if lhs.id == rhs.id {
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
     }
 }

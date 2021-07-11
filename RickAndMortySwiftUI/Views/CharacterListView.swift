@@ -14,7 +14,7 @@ struct CharacterListView: View {
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.characters) { character in
+                ForEach(viewModel.characters, id: \.self) { character in
                     HStack {
                         Image(systemName: "person.fill")
                             .data(url: URL(string: character.image ?? ""))
@@ -31,6 +31,8 @@ struct CharacterListView: View {
                         }
                     }
                 }
+                .id(UUID())
+                
                 if !viewModel.endData {
                     HStack(alignment: .center) {
                         ActivityIndicatorView(isAnimating: .constant(self.viewModel.loading), style: .large)

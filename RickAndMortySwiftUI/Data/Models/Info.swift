@@ -6,7 +6,7 @@
 //
 
 import Foundation
-struct Info : Codable {
+struct Info : Codable, Hashable {
     let count : Int?
     let pages : Int?
     let next : String?
