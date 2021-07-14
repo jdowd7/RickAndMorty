@@ -22,6 +22,7 @@
 		23EB1789269A49DE00405813 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB1788269A49DE00405813 /* NetworkService.swift */; };
 		23EB178C269A716D00405813 /* UImage+Fetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB178B269A716D00405813 /* UImage+Fetcher.swift */; };
 		23EB1792269B8C4A00405813 /* ActivityIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB1791269B8C4A00405813 /* ActivityIndicator.swift */; };
+		23EB1797269E73A900405813 /* CharacterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23EB1796269E73A900405813 /* CharacterDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		23EB1788269A49DE00405813 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		23EB178B269A716D00405813 /* UImage+Fetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UImage+Fetcher.swift"; sourceTree = "<group>"; };
 		23EB1791269B8C4A00405813 /* ActivityIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicator.swift; sourceTree = "<group>"; };
+		23EB1796269E73A900405813 /* CharacterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			children = (
 				2349D46D269A2DD30066708D /* CharacterListView.swift */,
 				2349D48A269A3E360066708D /* CharacterViewModel.swift */,
+				23EB1796269E73A900405813 /* CharacterDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				23EB1789269A49DE00405813 /* NetworkService.swift in Sources */,
 				2349D46E269A2DD30066708D /* CharacterListView.swift in Sources */,
 				2349D46C269A2DD30066708D /* RickAndMortySwiftUIApp.swift in Sources */,
+				23EB1797269E73A900405813 /* CharacterDetailView.swift in Sources */,
 				2349D484269A35190066708D /* Info.swift in Sources */,
 				23EB1792269B8C4A00405813 /* ActivityIndicator.swift in Sources */,
 				2349D47F269A31940066708D /* Character.swift in Sources */,

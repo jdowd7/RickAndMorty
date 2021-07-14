@@ -15,20 +15,8 @@ struct CharacterListView: View {
         NavigationView {
             List {
                 ForEach(viewModel.characters, id: \.self) { character in
-                    HStack {
-                        Image(systemName: "person.fill")
-                            .data(url: URL(string: character.image ?? ""))
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .frame(width: 100, height: 100, alignment: .center)
-                        
-                        VStack(alignment: .center, spacing: 25) {
-                            Text(character.name ?? "").font(.headline)
-                            HStack(alignment: .bottom) {
-                                Text("Status: \(character.status ?? "")").font(.subheadline)
-                                Text("Species: \(character.species ?? "")").font(.subheadline)
-                            }
-                        }
+                    NavigationLink(destination: CharacterDetailView(character: character)) {
+                        CharacterCell(character: character)
                     }
                 }
                 .id(UUID())
@@ -65,5 +53,28 @@ struct CharacterListView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         CharacterListView()
+    }
+}
+
+struct CharacterCell: View {
+    
+    var character: Character
+    
+    var body: some View {
+        HStack {
+            Image(systemName: "person.fill")
+                .data(url: URL(string: character.image ?? ""))
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 100, height: 100, alignment: .center)
+            
+            VStack(alignment: .center, spacing: 25) {
+                Text(character.name ?? "").font(.headline)
+                HStack(alignment: .bottom) {
+                    Text("Status: \(character.status ?? "")").font(.subheadline)
+                    Text("Species: \(character.species ?? "")").font(.subheadline)
+                }
+            }
+        }
     }
 }
